@@ -11,11 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('product_images', function (Blueprint $table) {
+        Schema::create('cast', function (Blueprint $table) {
             $table->id();
-            $table->string('file_name');
-            $table->integer('product_id');
-            $table->tinyInteger('status')->default(0);
+            $table->integer("movie_id");
+            $table->integer("actor_id");
+            $table->string("role")->nullable();
+            $table->tinyInteger("status")->default(1);
             $table->timestamps();
         });
     }
@@ -25,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('product_images');
+        Schema::dropIfExists('cast');
     }
 };

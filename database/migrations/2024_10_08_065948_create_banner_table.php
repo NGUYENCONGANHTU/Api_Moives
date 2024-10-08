@@ -11,13 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('notification', function (Blueprint $table) {
+        Schema::create('banner', function (Blueprint $table) {
             $table->id();
+            $table->string('link')->nullable(); 
             $table->string('title');
-            $table->string('order_id');
-            $table->integer('user_id');
-            $table->text('description')->nullable(); 
-            $table->integer('status');
+            $table->text('description')->nullable();
+            $table->timestamp('start_date')->nullable(false);
+            $table->timestamp('end_date')->nullable(); // Ngày kết thúc hiển thị banner (có thể null)
+            $table->tinyInteger("status")->default(1);
             $table->timestamps();
         });
     }
@@ -27,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('notification');
+        Schema::dropIfExists('banner');
     }
 };

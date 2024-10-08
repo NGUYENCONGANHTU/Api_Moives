@@ -11,11 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('trademarks', function (Blueprint $table) {
+        Schema::create('booking_history', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->tinyInteger('status')->default(0);
-            $table->text('description')->nullable();
+
+            $table->integer("booking_id");
+            $table->tinyInteger("status")->default(0);
+            $table->dateTime('change_date')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->text('description')->nullable(); 
             $table->timestamps();
         });
     }
@@ -25,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('trademarks');
+        Schema::dropIfExists('booking_history');
     }
 };

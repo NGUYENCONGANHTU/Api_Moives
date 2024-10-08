@@ -11,10 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('product_attributes', function (Blueprint $table) {
+        Schema::create('directors', function (Blueprint $table) {
             $table->id();
-            $table->integer('attribute_id');
-            $table->integer('product_id');
+            $table->string("full_name")->nullable();
+            $table->date("birth_date")->nullable();
+            $table->string("nationality")->nullable();
+            $table->text("bio")->nullable();
+            $table->tinyInteger("status")->default(0);
             $table->timestamps();
         });
     }
@@ -24,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('product_attributes');
+        Schema::dropIfExists('directors');
     }
 };
