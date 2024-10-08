@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Product extends Model
+class Movie extends Model
 {
     use HasFactory;
 
@@ -15,18 +15,21 @@ class Product extends Model
      * @var array
      */
     protected $fillable = [
-        'name',
-        'images',
-        'price',
-        'category_id',
-        'trademark_id',
-        'sale_price',
-        'is_view',
-        'is_purchases',
+        'title',
+        'director_id',
+        'actors_id',
+        'director',
+        'cast',
+        'genre',
         'description',
+        'release_date',
+        'duration',
+        'trailer_url',
+        'price',
+        'sale_price',
+        'banner_image',
+        'stock_quantity',
+        'like',
         'status',
-        'type',
-        'star',
-        'heart'
     ];
 }

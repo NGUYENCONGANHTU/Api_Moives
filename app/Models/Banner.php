@@ -15,10 +15,11 @@ class Banner extends Model
      */
     protected $table = 'banners';
     protected $fillable = [
-        'name',
-        'images',
         'link',
+        'title',
         'description',
+        'start_date',
+        'end_date',
         'status'
     ];
 }

@@ -13,8 +13,10 @@ return new class extends Migration
     {
         Schema::create('news', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->integer('author_id'); 
+            $table->timestamp('publish_date')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->integer('admin_id');
-            $table->string('name');
             $table->string('images')->nullable();
             $table->tinyInteger('status')->default(0);
             $table->text('description')->nullable();

@@ -15,10 +15,10 @@ class News extends Model
      * @var array
      */
     protected $fillable = [
-        'admin_id',
-        'images',
-        'name',
-        'description',
+        'title',
+        'content',
+        'author_id',
+        'publish_date',
         'status'
     ];
 }

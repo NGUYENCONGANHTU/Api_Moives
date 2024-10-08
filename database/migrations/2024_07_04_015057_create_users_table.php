@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
+            $table->string('uuid');
             $table->longText("email")->nullable();
             $table->longText("avatar")->nullable();
             $table->longText("full_name")->nullable();
@@ -27,7 +28,6 @@ return new class extends Migration
             $table->string('last_name')->nullable();
             $table->double("version")->default(0);
             $table->string("ip")->nullable();
-            $table->string("otp")->nullable();
             $table->tinyInteger("status")->default(1);
             $table->longText("refresh_token")->nullable();
             $table->timestamps();
