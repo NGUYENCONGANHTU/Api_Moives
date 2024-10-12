@@ -13,10 +13,12 @@ class Actor extends Model
      *
      * @var array
      */
+    protected $table = 'actor';
     protected $fillable = [
         'full_name',
-        'birth_date',
+        'movie_id',
         'nationality',
         'bio',
-    ]; // sau em lấy hết các trường trong bảng movies sau đó ném vòa đây nhé
+        'status',
+    ];
 }

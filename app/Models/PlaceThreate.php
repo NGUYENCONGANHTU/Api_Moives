@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+
 class PlaceThreate extends Model
 {
     use HasFactory;
@@ -13,6 +14,7 @@ class PlaceThreate extends Model
      *
      * @var array
      */
+    protected $table = 'place_theater';
     protected $fillable = [
         'name',
         'descript',

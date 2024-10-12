@@ -34,10 +34,6 @@ class PlaceThreateRepository extends BaseRepository
             $query->where('name', 'like', '%' . $params['name'] . '%');
         }
 
-        if (isset($params['status'])) {
-            $query = $query->where('status', '=', (int) $params['status']);
-        }
-
         return $query->paginate($limit);
     }
 }

@@ -14,3 +14,4 @@ php artisan key:generate
 # run database + seeder
 
 php artisan migrate:refresh --seed
+php artisan migrate:fresh

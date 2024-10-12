@@ -34,6 +34,10 @@ class TheaterRepository extends BaseRepository
             $query->where('name', 'like', '%' . $params['name'] . '%');
         }
 
+        if (isset($params['id_place_theater'])) {
+            $query = $query->where('id_place_theater', '=', (int) $params['id_place_theater']);
+        }
+
         if (isset($params['status'])) {
             $query = $query->where('status', '=', (int) $params['status']);
         }

@@ -13,7 +13,7 @@ class Banner extends Model
      *
      * @var array
      */
-    protected $table = 'banners';
+    protected $table = 'banner';
     protected $fillable = [
         'link',
         'title',

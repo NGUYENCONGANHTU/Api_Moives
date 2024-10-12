@@ -13,6 +13,7 @@ class Theater extends Model
      *
      * @var array
      */
+    protected $table = 'theater';
     protected $fillable = [
         'id_place_theater',
         'name',
