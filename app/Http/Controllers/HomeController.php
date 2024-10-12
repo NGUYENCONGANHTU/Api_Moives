@@ -3,15 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Repositories\CategoryRepositories;
-use App\Repositories\ProductRepositories;
-use App\Repositories\TrademarkRepositories;
-use App\Repositories\ProductImageRepositories;
-use App\Repositories\AttributesRepositories;
-use App\Http\Services\Admins\AttributeService;
+use App\Repositories\MovieRepository;
+use App\Repositories\PlaceThreateRepository;
+use App\Repositories\TheaterRepository;
+use App\Repositories\NewsRepositories;
 use App\Repositories\BannerRepositories;
-use App\Repositories\ContactRepository;
-use App\Repositories\ProductReviewRepository;
 use App\Http\Resources\Admins\Banner\BannerResource;
 use App\Http\Resources\Admins\Category\CategoryResource;
 use App\Http\Resources\Admins\Product\ProductResources;
@@ -25,30 +21,22 @@ class HomeController extends Controller
     /**
      * @var Repository
      */
+    protected $movieRepository;
+    protected $placeThreateRepository;
+    protected $theaterRepository;
+    protected $newsRepositories;
     protected $bannerRepositories;
-    protected $categoryRepositories;
-    protected $productRepositories;
-    protected $trademarkRepositories;
-    protected $attributesRepositories;
-    protected $productImageRepositories;
-    protected $attributesServices;
-    protected $productReviewRepository;
-    protected $contactRepository;
 
     /**
      * Construct
      */
     public function __construct()
     {
-        $this->bannerRepositories = new BannerRepositories();
-        $this->categoryRepositories = new CategoryRepositories();
-        $this->productRepositories = new ProductRepositories();
-        $this->attributesRepositories = new AttributesRepositories();
-        $this->productImageRepositories = new ProductImageRepositories();
-        $this->trademarkRepositories = new TrademarkRepositories();
-        $this->attributesServices = new AttributeService();
-        $this->productReviewRepository = new ProductReviewRepository();
-        $this->contactRepository = new ContactRepository();
+        $this->movieRepository = new MovieRepository();
+        $this->placeThreateRepository = new PlaceThreateRepository();
+        $this->theaterRepository = new TheaterRepository();
+        $this->newsRepositories = new NewsRepositories();
+        $this->newsRepositories = new BannerRepositories();
     }
 
     /**

@@ -14,6 +14,7 @@ use App\Http\Requests\RefreshTokenRequest;
 use App\Http\Requests\Auth\ChangePasswordRequest;
 use App\Http\Resources\UserAuthenticate\UserAuthenticateResource;
 use App\Http\Resources\UserAuthenticate\UserResource;
+use Illuminate\Support\Str;
 
 class UserAuthenticateController extends Controller
 {
@@ -107,7 +108,11 @@ class UserAuthenticateController extends Controller
         try {
             $password = $request->password;
             $attribute = [];
-            $attribute['user_name'] = $request->input('user_name');
+            $attribute['user_name'] = $request->input('email');
+            $attribute['uuid'] = Str::uuid();
+            $attribute['first_name'] = $request->input('first_name');
+            $attribute['last_name'] = $request->input('last_name');
+            $attribute['age'] = $request->input('age');
             $attribute['password'] = Hash::make($password);
             $attribute['status'] =  1;
             $attribute['email'] = $request->input('email');
@@ -116,7 +121,7 @@ class UserAuthenticateController extends Controller
             $attribute['country'] = 'Việt Nam';
             $attribute['phone_number'] = $request->input('phone_number');
             $attribute['refresh_token'] =  md5($request->input('email').config('constant.keySecret').Carbon::now());
-            $attribute['full_name'] = $request->input('user_name');
+            $attribute['full_name'] = $request->input('first_name') + $request->input('last_name');
            
             $user = $this->usersRepository->create($attribute);
             return new UserResource($user);
