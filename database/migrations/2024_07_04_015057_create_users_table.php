@@ -23,6 +23,8 @@ return new class extends Migration
             $table->longText("phone_number")->nullable();
             $table->longText("password")->nullable();
             $table->integer("age")->default(0);
+            $table->integer("type_login")->default(0);
+            $table->string("language")->nullable();
             $table->longText("user_name");
             $table->string('first_name')->nullable();
             $table->string('last_name')->nullable();

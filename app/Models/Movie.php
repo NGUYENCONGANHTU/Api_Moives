@@ -16,9 +16,11 @@ class Movie extends Model
      */
     protected $fillable = [
         'title',
+        'id_theater',
         'director_id',
         'actors_id',
         'director',
+        'creen',
         'cast',
         'genre',
         'description',
