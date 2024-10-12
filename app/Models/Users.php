@@ -26,6 +26,8 @@ class Users extends Authenticatable implements JWTSubject
         'cover_photo',
         'display_name',
         'status',
+        'section_id',
+        'type_login',
         'password',
         'city',
         'theme',

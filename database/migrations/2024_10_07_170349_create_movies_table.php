@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id(); // Tương đương với auto-increment primary key
             $table->string('title'); // varchar(255)
             $table->unsignedBigInteger('director_id')->nullable(); // director_id int(100)
+            $table->unsignedBigInteger('id_theater')->nullable();
             $table->unsignedBigInteger('actors_id')->nullable(); // actors_id int(100)
             $table->string('director')->nullable(); // director varchar(100)
             $table->string('cast'); // cast varchar(255) [not null]

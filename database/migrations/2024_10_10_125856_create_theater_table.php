@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('theater', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_place_theater'); 
+            $table->integer('id_place_theater'); 
             $table->string('name', 255); 
             $table->string('descript', 255)->nullable();
             $table->string('address', 255); 

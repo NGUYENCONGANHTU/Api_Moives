@@ -15,6 +15,9 @@ return new class extends Migration
             $table->id();
             $table->integer("user_id");
             $table->integer("movie_id");
+            $table->integer("id_theater");
+            $table->integer("id_event");
+            $table->integer("id_place_theater");
             $table->dateTime("booking_date")->default(DB::raw('CURRENT_TIMESTAMP')); //Ngày đặt vé, mặc định là thời gian hiện tại.
             $table->integer("quantity");
             $table->float("price");
