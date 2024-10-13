@@ -20,7 +20,8 @@ class DatabaseSeeder extends Seeder
             MovieSeeder::class,
             PlaceTheaterSeeder::class,
             TheaterSeeder::class,
-            AdminSeeder::class
+            AdminSeeder::class,
+            BannerSeeder::class
         ]);
     }
 }
