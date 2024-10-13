@@ -21,6 +21,10 @@ Route::prefix('api/users')->group(function () {
 
 
     Route::get('home/banner', [HomeController::class, 'homeBanner'])->name('banner-home');
+    Route::get('home/theaters', [HomeController::class, 'theaterMovies'])->name('theaters-home');
+    Route::get('home/actors', [HomeController::class, 'actorMovies'])->name('actors-home');
+    Route::get('home/movies', [HomeController::class, 'homeMovies'])->name('movies-home');
+    Route::get('home/placeThreates', [HomeController::class, 'placeThreates'])->name('placeThreates-home');
     
     Route::group(['middleware' => ['jwt.verify', 'auth:app-users']], function () {
 

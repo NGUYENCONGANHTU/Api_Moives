@@ -16,8 +16,10 @@ class ActorResource extends JsonResource
         return [
             'id' => $this->id,
             'full_name' => $this->full_name,
+            'movie_id' => $this->movie_id,
             'birth_date' => $this->birth_date,
             'nationality' => $this->nationality,
+            'status' => $this->status
         ];
     }
 }

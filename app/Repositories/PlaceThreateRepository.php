@@ -24,6 +24,7 @@ class PlaceThreateRepository extends BaseRepository
      * @param array $params
      * @return mixed
      */
+    
     public function search($params)
     {
         // default limit

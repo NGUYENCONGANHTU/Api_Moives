@@ -3,6 +3,7 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
+use App\Repositories\DirectorsRepository;
 class MovieResource extends JsonResource
 {
     /**
@@ -13,15 +14,12 @@ class MovieResource extends JsonResource
      */
     public function toArray($request)
     {
+        $directorsRepository = new DirectorsRepository();
         return [
             'id' => $this->id,
             'title' => $this->title,
-            'id_theater' => $this->id_theater,
             'director_id' => $this->director_id,
-            'actors_id' => $this->actors_id,
-            'director' => $this->director,
-            'creen' => $this->creen,
-            'cast' => $this->cast,
+            'director_name' => $directorsRepository->findOrFail($this->director_id)->full_name, 
             'genre' => $this->genre,
             'description' => $this->description,
             'release_date' => $this->release_date,
