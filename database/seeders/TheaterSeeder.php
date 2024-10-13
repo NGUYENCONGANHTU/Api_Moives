@@ -39,6 +39,7 @@ class TheaterSeeder extends Seeder
                 'address' => `Tầng `. $i.`| TTTM Hồ Gươm Plaza, 110 Trần Phú, Phường Mỗ Lao, Quận Hà Đông, Hà Nội.`,
                 'phone' => '046275524'.$i,
                 'price_ticket' => '12000',
+                'id_place_theater' => rand(1,13),
                 'hotline' => `1900 6017`.$i,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
@@ -52,6 +53,7 @@ class TheaterSeeder extends Seeder
                 'phone' => '046275524'.$i,
                 'price_ticket' => '12000',
                 'hotline' => `1900 6017`.$i,
+                'id_place_theater' => rand(1,13),
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ]);
@@ -64,6 +66,7 @@ class TheaterSeeder extends Seeder
                 'phone' => '046275524'.$i,
                 'price_ticket' => '12000',
                 'hotline' => `1900 6017`.$i,
+                'id_place_theater' => rand(1,13),
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ]);
