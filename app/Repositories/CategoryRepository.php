@@ -3,10 +3,10 @@
 namespace App\Repositories;
 
 use App\Repositories\BaseRepository;
-use App\Models\Actor;  
+use App\Models\Category;
 use Exception; 
 
-class ActorRepository extends BaseRepository
+class CategoryRepository extends BaseRepository
 {
      /**
      * Specify Model class name
@@ -15,7 +15,7 @@ class ActorRepository extends BaseRepository
      */
     public function model()
     {
-        return Actor::class;
+        return Category::class;
     }
 
     /**

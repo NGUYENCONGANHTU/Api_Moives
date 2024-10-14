@@ -20,6 +20,9 @@ class Movie extends Model
         'director_id',
         'actors_id',
         'director',
+        'watch_time',
+        'premiere', // khởi chiếu 
+        'language',
         'creen',
         'cast',
         'genre',
