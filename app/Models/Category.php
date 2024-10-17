@@ -13,6 +13,7 @@ class Category extends Model
      *
      * @var array
      */
+    protected $table = 'categories';
     protected $fillable = [
         'id',
         'name',
@@ -21,4 +22,9 @@ class Category extends Model
         'create_at',
         'update_at'
     ];
+
+    public function list_categories()
+    {
+        return $this->belongsToMany(Movie::class , 'movies', 'id_movies', 'id');
+    }
 }

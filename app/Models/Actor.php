@@ -21,4 +21,8 @@ class Actor extends Model
         'bio',
         'status',
     ];
+    public function list_actors()
+    {
+        return $this->belongsToMany(Movie::class , 'movies', 'movie_id', 'id');
+    }
 }

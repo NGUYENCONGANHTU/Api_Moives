@@ -31,6 +31,8 @@ class MovieResource extends JsonResource
             'stock_quantity' => $this->stock_quantity,
             'like' => $this->like,
             'status' => $this->status,
+            'list_categories' => $this->list_categories,
+            'list_actors' => $this->list_actors
         ];
     }
 }
