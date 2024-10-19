@@ -15,23 +15,14 @@ class BookingResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'user_id' => $this->user_id,
-            'movie_id' => $this->movie_id,
-            'booking_date' => $this->booking_date,
-            'id_theater' => $this->id_theater,
-            'id_event' => $this->id_event,
-            'id_place_theater' => $this->id_place_theater,
-            'status' => $this->status,
-            'quantity' => $this->quantity,
-            'price' => $this->price,
-            'discount' => $this->discount,
-            'seat_selection' => $this->seat_selection,
-            'total_amount' => $this->total_amount,
-            'city' => $this->city,
-            'theater' => $this->theater,
-            'show_time' => $this->show_time,
-            'payment_method' => $this->payment_method,
-            'status' => $this->status,
+            'place_id' => $this->place_id, // ID địa điểm
+            'date_booking' => $this->date_booking,// Ngày đặt vé
+            'image' => $this->image,// Hình ảnh
+            'status' => $this->status,// trạng thái
+            'movies_id' => $this->movies_id,// ID phim
+            'price' => $this->price,// Giá vé
+            'seat' => $this->seat,// Số ghế đã đặt
+            'user_id' => $this->user_id,// ID người dùng
         ];
     }
 }

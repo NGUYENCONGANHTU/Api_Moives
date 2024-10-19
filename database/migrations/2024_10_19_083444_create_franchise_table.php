@@ -11,21 +11,20 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('event', function (Blueprint $table) {
+        Schema::create('franchise', function (Blueprint $table) { // thương hiệu  
             $table->id();
-            $table->string("name");// Tên sự kiện
             $table->string('image')->nullable(); // Hình ảnh, có thể để trống
-            $table->string("description");// Mô tả về sự kiện, có thể null
-            $table->tinyInteger('status')->default(0);  // Trạng thái của sự kiện (0: không hoạt động, 1: hoạt động)
+            $table->string('name'); // Tên thương hiệu
+            $table->string('movies_id'); // ID phim (liên kết tới bảng movies)
+            $table->tinyInteger('status')->default(0); // Trạng thái thương hiệu (0: không hoạt động, 1: hoạt động)
             $table->timestamps();
         });
     }
-
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('event');
+        Schema::dropIfExists('franchise');
     }
 };

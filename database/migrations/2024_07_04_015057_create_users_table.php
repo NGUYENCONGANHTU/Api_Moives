@@ -13,29 +13,19 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('uuid');
-            $table->longText("email")->nullable();
-            $table->longText("avatar")->nullable();
-            $table->longText("full_name")->nullable();
-            $table->longText("country")->nullable();
-            $table->longText("city")->nullable();
-            $table->longText("address")->nullable();
-            $table->longText("phone_number")->nullable();
-            $table->longText("password")->nullable();
+            $table->string("email")->unique()->nullable();// Email người dùng (đảm bảo duy nhất)
+            $table->string("first_name")->nullable();
+            $table->string("last_name")->nullable();
+            $table->string("full_name")->nullable();
+            $table->string("phone")->nullable(); 
+            $table->string("password"); 
+            $table->string("address")->nullable();
+            $table->tinyInteger("status")->default(1);// Trạng thái 
             $table->integer("age")->default(0);
-            $table->integer("type_login")->default(0);
-            $table->string("language")->nullable();
-            $table->longText("user_name");
-            $table->string('first_name')->nullable();
-            $table->string('last_name')->nullable();
-            $table->double("version")->default(0);
-            $table->string("ip")->nullable();
-            $table->tinyInteger("status")->default(1);
-            $table->longText("refresh_token")->nullable();
+            $table->tinyInteger('type')->default(0);// Kiểu đăng nhập
             $table->timestamps();
         });
     }
-
     /**
      * Reverse the migrations.
      */

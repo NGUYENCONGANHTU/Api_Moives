@@ -3,10 +3,10 @@
 namespace App\Repositories;
 
 use App\Repositories\BaseRepository;
-use App\Models\Booking;  
+use App\Models\Cinema;
 use Exception; 
 
-class BookingRepository extends BaseRepository
+class CinemaRepository extends BaseRepository
 {
      /**
      * Specify Model class name
@@ -15,7 +15,7 @@ class BookingRepository extends BaseRepository
      */
     public function model()
     {
-        return Booking::class;
+        return Cinema::class;
     }
 
     /**
@@ -32,6 +32,10 @@ class BookingRepository extends BaseRepository
 
         if (isset($params['name'])) {
             $query->where('name', 'like', '%' . $params['name'] . '%');
+        }
+
+        if (isset($params['id_place_theater'])) {
+            $query = $query->where('id_place_theater', '=', (int) $params['id_place_theater']);
         }
 
         if (isset($params['status'])) {

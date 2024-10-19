@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Event extends Model
+class Gener extends Model
 {
     use HasFactory;
       /**
@@ -14,9 +14,11 @@ class Event extends Model
      * @var array
      */
     protected $fillable = [
-        'name', // tên sự kiện
-        'image',//hình ảnh sự kiện
-        'description', // mô tả sự kiện
-        'status',// trạng thái sự kiện
+        'name', //tên thương hiệu
+        'description', // mô tả thương hiệu 
+        'status', //trạng thái thương hiệu
+        'movie_id', //mã phim 
+        'create_at',
+        'update_at',
     ]; 
 }
