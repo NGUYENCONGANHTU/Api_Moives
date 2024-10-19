@@ -3,7 +3,7 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
-class EventResource extends JsonResource
+class FranchiseResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -15,10 +15,10 @@ class EventResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'name' => $this->name,// tên sự kiện
-            'image' => $this->image,//hình ảnh sự kiện
-            'description' => $this->description, // mô tả sự kiện
-            'status' => $this->status,// trạng thái sự kiện
+            'image' => $this->image,// tên Thương hiệu
+            'name' => $this->name,//hình ảnh Thương hiệu
+            'movies_id' => $this->movies_id, // mô tả Thương hiệu
+            'status' => $this->status,// trạng thái Thương hiệu
         ];
     }
 }

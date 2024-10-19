@@ -3,10 +3,10 @@
 namespace App\Repositories;
 
 use App\Repositories\BaseRepository;
-use App\Models\Booking;  
+use App\Models\Gener;  
 use Exception; 
 
-class BookingRepository extends BaseRepository
+class GenerRepository extends BaseRepository
 {
      /**
      * Specify Model class name
@@ -15,7 +15,7 @@ class BookingRepository extends BaseRepository
      */
     public function model()
     {
-        return Booking::class;
+        return Gener::class;
     }
 
     /**

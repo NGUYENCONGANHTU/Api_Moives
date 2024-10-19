@@ -14,22 +14,13 @@ class Booking extends Model
      * @var array
      */
     protected $fillable = [
-        'user_id',
-        'movie_id',
-        'booking_date',
-        'id_theater',
-        'id_event',
-        'id_place_theater',
-        'status',
-        'quantity',
-        'price',
-        'discount',
-        'total_amount',
-        'seat_selection',
-        'city',
-        'theater',
-        'show_time',
-        'payment_method',
-        'status',
+        'place_id',// ID địa điểm
+        'date_booking',// Ngày đặt vé
+        'image',// Hình ảnh
+        'status',// trạng thái
+        'movies_id',// ID phim
+        'price',// Giá vé
+        'seat',// Số ghế đã đặt
+        'user_id',// ID người dùng
     ]; 
 }

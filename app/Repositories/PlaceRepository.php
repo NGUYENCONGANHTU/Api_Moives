@@ -3,10 +3,10 @@
 namespace App\Repositories;
 
 use App\Repositories\BaseRepository;
-use App\Models\Booking;  
+use App\Models\Place;
 use Exception; 
 
-class BookingRepository extends BaseRepository
+class PlaceRepository extends BaseRepository
 {
      /**
      * Specify Model class name
@@ -15,7 +15,7 @@ class BookingRepository extends BaseRepository
      */
     public function model()
     {
-        return Booking::class;
+        return Place::class;
     }
 
     /**
@@ -24,6 +24,7 @@ class BookingRepository extends BaseRepository
      * @param array $params
      * @return mixed
      */
+    
     public function search($params)
     {
         // default limit
@@ -32,10 +33,6 @@ class BookingRepository extends BaseRepository
 
         if (isset($params['name'])) {
             $query->where('name', 'like', '%' . $params['name'] . '%');
-        }
-
-        if (isset($params['status'])) {
-            $query = $query->where('status', '=', (int) $params['status']);
         }
 
         return $query->paginate($limit);

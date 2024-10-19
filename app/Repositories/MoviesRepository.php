@@ -3,10 +3,10 @@
 namespace App\Repositories;
 
 use App\Repositories\BaseRepository;
-use App\Models\Booking;  
+use App\Models\Movies;  // import model tương ứng
 use Exception; 
 
-class BookingRepository extends BaseRepository
+class MoviesRepository extends BaseRepository
 {
      /**
      * Specify Model class name
@@ -15,7 +15,7 @@ class BookingRepository extends BaseRepository
      */
     public function model()
     {
-        return Booking::class;
+        return Movies::class;
     }
 
     /**
@@ -32,6 +32,22 @@ class BookingRepository extends BaseRepository
 
         if (isset($params['name'])) {
             $query->where('name', 'like', '%' . $params['name'] . '%');
+        }
+
+        if (isset($params['director_id'])) {
+            $query = $query->where('director_id', '=', (int) $params['director_id']);
+        }
+
+        if (isset($params['id_theater'])) {
+            $query = $query->where('id_theater', '=', (int) $params['id_theater']);
+        }
+
+        if (isset($params['actors_id'])) {
+            $query = $query->where('actors_id', '=', (int) $params['actors_id']);
+        }
+
+        if (isset($params['price'])) {
+            $query = $query->where('price', '=', (int) $params['price']);
         }
 
         if (isset($params['status'])) {
